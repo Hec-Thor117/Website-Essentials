@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Ubuntu:wght@500&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,7 +8,7 @@ body {
     margin: 0;
     background-color: #202020;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lora, serif;
 }
 
 /* ----- Header ----- */
@@ -19,11 +21,12 @@ body {
 }
 
 .title {
+    font-family: Ubuntu, serif;
     font-size: 2.5rem;
     margin: 0 auto;
 }
 
-.container {
+.menu-icon {
     display: inline-block;
     cursor: pointer;
     z-index: 2;
@@ -32,7 +35,7 @@ body {
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: rgb(108, 245, 115);
+    background-color: #6cf573;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -56,8 +59,7 @@ body {
     width: 0;
     position: fixed;
     z-index: 1;
-    bottom: 0;
-    left: 0;
+    top: 0;
     background-color: #101010;
     overflow-x: hidden;
     padding-top: 100px;
@@ -73,10 +75,86 @@ body {
     transition: 0.3s;
 }
 
-.navigation a:hover {
-    color: rgb(108, 245, 115);
+.navigation a:hover,
+.navigation a:focus,
+#current-page {
+    color: #6cf573;
 }
 
 .open {
     width: 250px;
+}
+
+#current-page:hover {
+    cursor: default;
+}
+
+/* ----- Main Content ----- */
+
+.main-content {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.main-content a {
+    text-decoration: none;
+    color: #6cf573;
+}
+
+.main-content a:hover,
+.main-content a:focus {
+    opacity: .7;
+}
+
+/* ----- Modal CSS ----- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #fefefe;
+    color: #202020;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ----- Media Queries ----- */
+
+@media(min-width: 1300px) {
+    .main-content {
+        width: 35%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 2200px) {
+    .main-content {
+        width: 20%;
+    }
 }
